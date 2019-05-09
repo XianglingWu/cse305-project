@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static',filename='profile_pics/'+product.seller.image_file) }}">
+
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ product.seller.username }}</a>
+            <small class="text-muted">{{ product.date_added.strftime('%Y-%m-%d') }}</small>
+        </div>
+
+        <h2 class="article-title">{{ product.name }}: {{ product.quantity }} left</h2>
+        <img height="300" src="{{ url_for('static',filename='profile_pics/' +product.image_file) }}">
+        <p class="article-content">{{ product.description }}</p>
+    </div>
+</article>
+{% endblock content %}
