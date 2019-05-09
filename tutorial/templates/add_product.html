@@ -5,8 +5,9 @@
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">{{ legend }}</legend>
+            {% if product %}
             <img height="300" src="{{ url_for('static',filename='profile_pics/' +product.image_file) }}">
-
+            {% endif %}
             <div class="form-group">
                 {{ form.image.label() }}
                 {{ form.image(class="form-control-file") }}
